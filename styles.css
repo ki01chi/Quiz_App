@@ -1,0 +1,30 @@
+body {
+  background-color: #5cdb95;
+  color: #edf5e1;
+  font-family:'Century Gothic', sans-serif;
+  font-size: 20px;
+  width: 100%;
+  margin: 0 auto;
+  height: 1000px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 200px;
+  margin:0 auto;
+}
+
+#restart_btn {
+  font-family:'Century Gothic', sans-serif;
+  padding: 20px 100px;
+  background-color: #05386b;
+  color: #edf5e1;
+  font-size: 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
