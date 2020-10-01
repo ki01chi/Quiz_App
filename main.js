@@ -21,4 +21,10 @@
     const answersContainer = document.getElementById('answers');
     const restartButton = document.getElementById('restart_btn');
 
+  //-----------ページの読み込みが完了したらクイズ情報を取得する------------//
+
+  window.addEventListener('load', (event) => {
+    //クイズ情報の取得をおこなう
+  })
+
 })();
