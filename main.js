@@ -13,5 +13,12 @@
     // 正答数を保持する
     numberOfCorrects : 0
   };
-  
+
+    // ------------HTMLのid値がセットされているDOMを取得する--------------//
+
+    const questionElement = document.getElementById('question');
+    const resultElement = document.getElementById('result');
+    const answersContainer = document.getElementById('answers');
+    const restartButton = document.getElementById('restart_btn');
+
 })();
