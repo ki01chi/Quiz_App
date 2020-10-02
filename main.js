@@ -73,6 +73,8 @@
       //次のクイズ出題
       // fetchQuizData();
       console.log("tuginomonndai");
+      const quiz = gameState.quizzes[gameState.currentIndex];
+      makeQuiz(quiz);
     }
     //結果を表示
     else {
@@ -98,4 +100,27 @@
     }
   };
 
+  const makeQuiz = (quiz) => {
+    console.log(quiz);
+    const a = shuffle([1, 2, 3]);
+    console.log(a);
+  };
+
+
+
+  //_______________________________`shuffle関数` を実装する_______________________________//
+  const shuffle = (array) => {
+    //引数で受け取った配列内の値をシャッフルする
+    const newArray = array.slice();
+
+    for(let i = newArray.length - 1; i >= 0; i--) {
+    //0〜iのランダムな数値を取得
+      const rand = Math.floor(Math.random() * (i + 1));
+
+    //配列の数値を入れ替える
+      [newArray[i], newArray[rand]] = [newArray[rand], newArray[i]];
+    }
+    //コピー後のシャッフルした配列を返す
+    return newArray;
+  };
 })();
