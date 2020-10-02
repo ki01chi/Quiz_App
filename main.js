@@ -90,4 +90,12 @@
     restartButton.hidden = false;
   };
   
+  //________________________'removeAllAnswers'関数を実装する_____________________________//
+  const removeAllAnswers = () => {
+    //解答を全て削除する
+    while(answersContainer.firstChild) {
+      answersContainer.removeChild(answersContainer.firstChild);
+    }
+  };
+
 })();
