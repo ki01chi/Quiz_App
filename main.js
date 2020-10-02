@@ -102,10 +102,19 @@
 
   const makeQuiz = (quiz) => {
     console.log(quiz);
-    const a = shuffle([1, 2, 3]);
-    console.log(a);
+    const answers = buildAnswers(quiz);
+    console.log(answers);
   };
 
+  //________________________正解・不正解の解答をシャッフルする_____________________________//
+  const buildAnswers = (quiz) => {
+    const answers = [
+      quiz.correct_answer,
+      ...quiz.incorrect_answers //...を使うと配列を展開してくれる
+    ];
+    console.log(answers);
+    return shuffle(answers);
+  };
 
 
   //_______________________________`shuffle関数` を実装する_______________________________//
