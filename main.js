@@ -38,24 +38,47 @@
   //-----------------------`fetchQuizData関数`を実装する-------------------------//
   const fetchQuizData = () => {
 
-  //....................Webページ上の表示をリセットする......................//
-  questionElement.textContent = 'Now loading...';
-  resultElement.textContent = '';
-  restartButton.hidden = true;
+    //....................Webページ上の表示をリセットする......................//
+    questionElement.textContent = 'Now loading...';
+    resultElement.textContent = '';
+    restartButton.hidden = true;
 
-  //......API_URLとFetch API(fetchメソッド)を使ってAPI経由でデータを取得する.....//
+    //......API_URLとFetch API(fetchメソッド)を使ってAPI経由でデータを取得する.....//
     fetch(API_URL)
       .then(response => {
         return response.json();
       })
       .then(data => {
         console.log(data);
-        gameState.quizzes = data.result;
+        gameState.quizzes = data.results;
         gameState.currentIndex = 0;
         gameState.numberOfCorrects = 0;
 
         //クイズを開始する処理を実装する
+        setNextQuiz();
       });
   };
 
+  //________________________'setNextQuiz'関数を実装する__________________________//
+  const setNextQuiz = () => {
+
+    //............................表示要素をリセットする...........................//
+    questionElement.textContent = '';
+
+    //解答を全て削除する処理を実装する（関数）
+    removeAllAnswers();
+
+    //................条件に応じて、次の問題の表示 or 結果を表示する...............//
+    if (gameState.quizzes.length > gameState.currentIndex) {
+      //次のクイズ出題
+      // fetchQuizData();
+      console.log("tuginomonndai");
+    }
+      //結果を表示
+    else {
+      console.log("syuuryou");
+    }
+
+  };
+  
 })();
