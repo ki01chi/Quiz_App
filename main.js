@@ -74,11 +74,20 @@
       // fetchQuizData();
       console.log("tuginomonndai");
     }
-      //結果を表示
+    //結果を表示
     else {
       console.log("syuuryou");
+      finishQuiz();
     }
 
+  };
+  
+  //__________________________'finishQuiz'関数を実装する_________________________________//
+  const finishQuiz = () => {
+    //正答数を表示する
+    resultElement.textContent = `${gameState.numberOfCorrects} / ${gameState.quizzes.length} correct`
+    //「Restart」ボタンを表示する
+    restartButton.hidden = false;
   };
   
 })();
