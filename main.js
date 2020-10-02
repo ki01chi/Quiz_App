@@ -71,8 +71,9 @@
     //................条件に応じて、次の問題の表示 or 結果を表示する...............//
     if (gameState.quizzes.length > gameState.currentIndex) {
       //次のクイズ出題
-      // fetchQuizData();
       console.log("tuginomonndai");
+      const quiz = gameState.quizzes[gameState.currentIndex];
+      makeQuiz(quiz);
     }
     //結果を表示
     else {
@@ -98,4 +99,11 @@
     }
   };
 
+  //_____________________________'makeQuiz'関数を実装する___________________________________//
+  //..............クイズデータを元にWebページ上に問題と解答リストを表示する.................//
+  const makeQuiz = (quiz) => {
+    //クイズ出題処理をおこなう
+    console.log(quiz);
+
+  };
 })();
