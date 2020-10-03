@@ -100,11 +100,38 @@
     }
   };
 
+  //_____________________________'makeQuiz'関数を実装する__________________________________//
   const makeQuiz = (quiz) => {
-    console.log(quiz);
+    //クイズデータを元にWebページ上に問題と解答リストを表示する
     const answers = buildAnswers(quiz);
-    console.log(answers);
+    questionElement.textContent = quiz.question;
+    
+    answers.forEach((answer, index) =>{
+      const liElement = document.createElement('li');
+      liElement.textContent = answer;
+      answersContainer.appendChild(liElement);
+      console.log(answer);
+      
+      
+      //解答をクリックしたら、正解・不正解のチェックをする
+      liElement.addEventListener('click', (event) => {
+        const correctAnswer = quiz.correct_answer;
+      if(correctAnswer === liElement.textContent) {
+        gameState.numberOfCorrects++;
+        alert('せいかい！');
+      }
+      else {
+        alert(`まちがい！正解は ${correctAnswer}だよ`);
+        console.log(`こたえ：${correctAnswer}`);
+      }
+      //setNextQuiz関数を実行して次の問題をセットする(最後の問題の場合は結果を表示する。)
+      gameState.currentIndex++;
+      setNextQuiz();
+    });
+  });
   };
+
+
 
   //________________________正解・不正解の解答をシャッフルする_____________________________//
   const buildAnswers = (quiz) => {
