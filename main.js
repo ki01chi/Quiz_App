@@ -104,18 +104,18 @@
   const makeQuiz = (quiz) => {
     //クイズデータを元にWebページ上に問題と解答リストを表示する
     const answers = buildAnswers(quiz);
-    questionElement.textContent = quiz.question;
+    questionElement.textContent = unescapeHTML(quiz.question);
     
     answers.forEach((answer, index) =>{
       const liElement = document.createElement('li');
-      liElement.textContent = answer;
+      liElement.textContent = unescapeHTML(answer);
       answersContainer.appendChild(liElement);
       console.log(answer);
       
       
       //解答をクリックしたら、正解・不正解のチェックをする
       liElement.addEventListener('click', (event) => {
-        const correctAnswer = quiz.correct_answer;
+        const correctAnswer = unescapeHTML(quiz.correct_answer);
       if(correctAnswer === liElement.textContent) {
         gameState.numberOfCorrects++;
         alert('せいかい！');
@@ -144,7 +144,7 @@
   };
 
 
-  //_______________________________`shuffle関数` を実装する_______________________________//
+  //_______________________________'shuffle'関数を実装する_______________________________//
   const shuffle = (array) => {
     //引数で受け取った配列内の値をシャッフルする
     const newArray = array.slice();
@@ -158,5 +158,17 @@
     }
     //コピー後のシャッフルした配列を返す
     return newArray;
+  };
+
+  //___________________________'unescapeHTML'関数を実装する_________________________________//
+  const unescapeHTML = (str) => {
+    const div = document.createElement("div");
+    div.innerHTML = str.replace(/</g,"&lt;")
+                       .replace(/>/g,"&gt;")
+                       .replace(/ /g, "&nbsp;")
+                       .replace(/\r/g, "&#13;")
+                       .replace(/\n/g, "&#10;");
+
+    return div.textContent || div.innerText;
   };
 })();
