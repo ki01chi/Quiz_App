@@ -72,13 +72,13 @@
     if (gameState.quizzes.length > gameState.currentIndex) {
       //次のクイズ出題
       // fetchQuizData();
-      console.log("tuginomonndai");
+      // console.log("tuginomonndai");
       const quiz = gameState.quizzes[gameState.currentIndex];
       makeQuiz(quiz);
     }
     //結果を表示
     else {
-      console.log("syuuryou");
+      // console.log("syuuryou");
       finishQuiz();
     }
 

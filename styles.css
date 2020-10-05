@@ -49,3 +49,7 @@ p {
   margin: 50px 10px;
   user-select: none;
 }
+
+.container {
+  width: 100%;
+}
