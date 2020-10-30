@@ -1,0 +1,55 @@
+body {
+  background-color: #5cdb95;
+  color: #edf5e1;
+  font-family:'Century Gothic', sans-serif;
+  font-size: 20px;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn_container {
+  text-align: center;
+}
+
+#restart_btn {
+  font-family:'Century Gothic', sans-serif;
+  padding: 20px 100px;
+  background-color: #05386b;
+  color: #edf5e1;
+  font-size: 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+li {
+  margin: 20px auto;
+  text-align: center;
+  font-family:'Century Gothic', sans-serif;
+  padding: 20px 0px;
+  background-color: #05386b;
+  color: #edf5e1;
+  font-size: 25px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  list-style-type: none;
+  user-select: none;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  margin: 50px 10px;
+  user-select: none;
+}
+
+.container {
+  width: 100%;
+}
